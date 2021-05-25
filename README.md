@@ -25,3 +25,5 @@ _오성 그룹웨어 프로젝트_
 
 `예시2 참고해서 작성`
 
+<p align="center"><img src="https://github.com/tnqlsdl1300/GitHub/blob/936c19add3ade70021c1a1104b60086a1c0647a3/src/Rotating_earth_large.gif"></p>
+
