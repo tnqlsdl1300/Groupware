@@ -1,6 +1,25 @@
 # Osung Groupware
 
+_오성 그룹웨어 프로젝트_
 
->  기술 스택
+
+
+> 소개
+
+- 회사 내 일정, 전자결재, 사내 메일, 근태 관리 등을 한번에 처리해 업무 효율을 높일 수 있게 해주는 그룹웨어 서비스
+- 개발기간: 2020.11.24 ~ 2021.01.03 (약 4주)
+- 개발인원: 5명
+
+
+
+> 기술스택
 
 - Java
+- Spring Framework
+- Jsp
+- Javascript
+- JQuery
+- Apache Tomcat v8.5
+- OracleDB
+- Github
+
