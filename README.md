@@ -2,9 +2,9 @@
 
 _오성 그룹웨어 프로젝트_
 
+![main](https://github.com/tnqlsdl1300/GitHub/blob/7a77073cfe7eae6b4fe25b1b25a4396c68436bee/groupware_src/main.PNG)
+
 ## 소개
-
-
 
 - 회사 내 일정, 전자결재, 사내 메일, 근태 관리 등을 한번에 처리해 업무 효율을 높일 수 있게 해주는 그룹웨어 서비스
 - 개발기간: 2020.11.24 ~ 2021.01.03 (약 4주)
@@ -42,6 +42,8 @@ _오성 그룹웨어 프로젝트_
 - Maven
 - Git
 - Github
+
+## 기능
 
 
 
