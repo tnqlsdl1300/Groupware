@@ -12,18 +12,32 @@ _오성 그룹웨어 프로젝트_
 
 
 
-> 기술스택
+> 기술스택(Back-end/Server)
 
 - Java
-- Spring Framework
+- Spring Framework MVC
 - Jsp
-- Javascript
-- JQuery
+- Java Servlet
 - Apache Tomcat v8.5
 - OracleDB
-- Github
+- Mybatis 
 
-`예시2 참고해서 작성`
+> 기술스택(Front-end)
+
+- Javascript
+- JQuery
+- HTML 5 & CSS3
+- Bootstrap 3
+
+> 기술스택(Devops)
+
+- Git
+- Github
+- Maven
+
+
 
 <p align="center"><img src="https://github.com/tnqlsdl1300/GitHub/blob/936c19add3ade70021c1a1104b60086a1c0647a3/src/Rotating_earth_large.gif"></p>
+
+
 
