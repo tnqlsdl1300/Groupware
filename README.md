@@ -45,5 +45,5 @@ _오성 그룹웨어 프로젝트_
   <img src="https://github.com/tnqlsdl1300/GitHub/blob/3077e311452d75c3a9e0dda766989ca66ceded03/groupware_src/calendar.PNG" width="500" />
 </a>
 
-`기능 설명을 위한 자막이 있습니다.`
+`기능 설명을 위한 자막이 있습니다. 유튜브 자막을 켜주시길 바랍니다.`
 
