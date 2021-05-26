@@ -22,20 +22,12 @@ _오성 그룹웨어 프로젝트_
 - OracleDB
 - Mybatis 
 
-
-
-
-
 > Front-end
 
 - Javascript
 - JQuery
 - HTML 5 & CSS3
 - Bootstrap 3
-
-
-
-
 
 > Devops
 
@@ -45,11 +37,7 @@ _오성 그룹웨어 프로젝트_
 
 ## 기능
 
+##### 
 
-
-
-
-<p align="center"><img src="https://github.com/tnqlsdl1300/GitHub/blob/936c19add3ade70021c1a1104b60086a1c0647a3/src/Rotating_earth_large.gif"></p>
-
-
+## 시연영상(ToDo+/일정/예약 - 본인 구현 파트)
 
