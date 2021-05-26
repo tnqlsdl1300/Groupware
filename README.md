@@ -4,7 +4,11 @@ _오성 그룹웨어 프로젝트_
 
 
 
-> 소개
+# 소개
+
+------
+
+
 
 - 회사 내 일정, 전자결재, 사내 메일, 근태 관리 등을 한번에 처리해 업무 효율을 높일 수 있게 해주는 그룹웨어 서비스
 - 개발기간: 2020.11.24 ~ 2021.01.03 (약 4주)
@@ -12,7 +16,13 @@ _오성 그룹웨어 프로젝트_
 
 
 
-> 기술스택(Back-end/Server)
+
+
+# 기술스택
+
+------
+
+>  Back-end/Server
 
 - Java
 - Spring Framework MVC
@@ -22,18 +32,24 @@ _오성 그룹웨어 프로젝트_
 - OracleDB
 - Mybatis 
 
-> 기술스택(Front-end)
+
+
+> Front-end
 
 - Javascript
 - JQuery
 - HTML 5 & CSS3
 - Bootstrap 3
 
-> 기술스택(Devops)
+
+
+> Devops
 
 - Git
 - Github
 - Maven
+
+
 
 
 
