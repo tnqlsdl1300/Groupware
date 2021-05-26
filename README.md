@@ -2,6 +2,8 @@
 
 _오성 그룹웨어 프로젝트_
 
+<img src="https://github.com/tnqlsdl1300/GitHub/blob/4c558df33f6c5ccd341e0a94b98d0393926cfafa/groupware_src/osunglogo2.png" width="200" />
+
 ## 소개
 
 - 회사 내 일정, 전자결재, 사내 쪽지, 근태 관리 등을 한번에 처리해 업무 효율을 높일 수 있게 해주는 그룹웨어 서비스
