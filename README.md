@@ -41,5 +41,7 @@ _오성 그룹웨어 프로젝트_
 
 ## 시연영상(ToDo+/일정/예약 - 본인 구현 파트)
 
-[https://youtu.be/D9VRsz97MsY](https://youtu.be/D9VRsz97MsY)
+```
+[![Video Label](https://github.com/tnqlsdl1300/GitHub/blob/7a77073cfe7eae6b4fe25b1b25a4396c68436bee/groupware_src/main.PNG)](https://youtu.be/D9VRsz97MsY)
+```
 
