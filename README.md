@@ -2,8 +2,6 @@
 
 _오성 그룹웨어 프로젝트_
 
-![main](https://github.com/tnqlsdl1300/GitHub/blob/7a77073cfe7eae6b4fe25b1b25a4396c68436bee/groupware_src/main.PNG)
-
 ## 소개
 
 - 회사 내 일정, 전자결재, 사내 메일, 근태 관리 등을 한번에 처리해 업무 효율을 높일 수 있게 해주는 그룹웨어 서비스
@@ -34,6 +32,16 @@ _오성 그룹웨어 프로젝트_
 - Maven
 - Git
 - Github
+
+## DB구조
+
+`전체`
+
+![exerd](https://github.com/tnqlsdl1300/GitHub/blob/53c364534ed30e39a1cd205162dc4c4b28687415/groupware_src/exerd.PNG)
+
+`부분(본인 구현 파트)`
+
+![exerd_mypart](https://github.com/tnqlsdl1300/GitHub/blob/53c364534ed30e39a1cd205162dc4c4b28687415/groupware_src/exerd_mypart.PNG)
 
 ## 기능
 
