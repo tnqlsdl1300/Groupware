@@ -17,7 +17,6 @@ _오성 그룹웨어 프로젝트_
 - Java
 - Spring Framework MVC
 - Jsp
-- Java Servlet
 - Apache Tomcat v8.5
 - OracleDB
 - Mybatis 
