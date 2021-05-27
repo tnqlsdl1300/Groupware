@@ -107,7 +107,7 @@ _오성 그룹웨어 프로젝트_
 
   `변경전`
 
-  <video src="https://github.com/tnqlsdl1300/GitHub/blob/295d271b0344faf94fb2697e8052a4524ba18c9a/groupware_src/todoAjaxO.mp4" width="500"></video>
+  <video src="https://github.com/tnqlsdl1300/GitHub/blob/19a96334968624486aa0e15b766f2adb3f1f6905/groupware_src/todoAjaxX.webm" width="500"></video>
 
   `변경후`
 
