@@ -79,8 +79,6 @@ public class CalendarController {
 	      
 	      String searchWord = request.getParameter("searchWord");
 	      
-	      // System.out.println("검색어는 ? ==> " + searchWord);
-	      
 	      Map<String, String> paraMap = new HashedMap<>();
 	      paraMap.put("searchWord", searchWord);
 	      
@@ -600,19 +598,16 @@ public class CalendarController {
 			for (int i = 0; i < calList.size(); i++) {
 				if (calList.get(i).getCalendar_no().equalsIgnoreCase(fk_calendar_no)) {
 					// 불러온 캘린더와 겹치는 것이 있을 시 => 자신의 캘린더(삭제 가능)
-					System.out.println("겹쳤음");
 					n = 1;
 					break;
 				}else {
 					// 불러온 캘린더와 겹치는 것이 없을 시 => 자신의 캘린더(삭제 불가)
-					System.out.println("겹치는게 없을 때");
 					n = 0;
 				}
 				
 			}
 		}else {
 			// 자신의 캘린더가 아예 생성되지 않았을 경우 초대받은 캘린더만 있음(전부 삭제 불가)
-			System.out.println("캘린더 없을 때");
 			n = 0;
 		}
 

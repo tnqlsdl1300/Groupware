@@ -478,7 +478,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("해당 시간에는 이미 예약이 되어있어 예약할 수 없습니다.");
          }
          else{
-            // db오류
             alert("DB 오류");
          }
          
@@ -582,7 +581,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </head>
 <body class='stop-dragging'>
 
-<!-- Left navbar-header -->
   <div class="navbar-default sidebar cal_sidebar" role="navigation">
       <div class="sidebar-nav navbar-collapse slimscrollsidebar">
            <h2 class="pageTitleText">
@@ -655,7 +653,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <%-- 예약하기 모달 --%>
    <div id="addRsvModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()">&times;</button>
@@ -737,7 +734,6 @@ document.addEventListener('DOMContentLoaded', function() {
    <%-- 예약 상세정보 보여주기 모달 --%>
    <div id="showDetailRsvModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()">&times;</button>

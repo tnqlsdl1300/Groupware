@@ -58,7 +58,7 @@ public class TodoController {
 				jsonObj.put("subject", todo.getSubject());
 				jsonObj.put("content", todo.getContent());
 				jsonObj.put("bookmark", todo.getBookmark());
-				System.out.println(todo.getSubject());
+
 				jsonArr.put(jsonObj);
 			}
 		}

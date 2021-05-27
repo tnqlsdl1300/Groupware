@@ -88,10 +88,8 @@
 
 <script type="text/javascript">
 
-   //전체 모달 닫기(전역함수인듯)
    window.closeModal = function(){
        $('.modal').modal('hide');
-       //javascript:history.go(0);
    };
 
    $(document).ready(function() {
@@ -259,7 +257,6 @@
    <%-- 예약 상세정보 보여주기 모달 --%>
    <div id="showDetailRsvModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()">&times;</button>
