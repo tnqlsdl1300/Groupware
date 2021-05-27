@@ -107,5 +107,5 @@ _오성 그룹웨어 프로젝트_
 
   `변경전/후`
   
-  <img src = "https://github.com/tnqlsdl1300/GitHub/blob/9d5b60bf910b8e6924c77d6f768041e743980c14/groupware_src/todoAjaxX.gif" width="500"><img src = "https://github.com/tnqlsdl1300/GitHub/blob/72fcf1dac77540b03d90df8340abb640b5c6f067/groupware_src/todoAjaxO.gif" width="500">
+  <img src = "https://github.com/tnqlsdl1300/GitHub/blob/9d5b60bf910b8e6924c77d6f768041e743980c14/groupware_src/todoAjaxX.gif" width="30%"><img src = "https://github.com/tnqlsdl1300/GitHub/blob/72fcf1dac77540b03d90df8340abb640b5c6f067/groupware_src/todoAjaxO.gif" width="30%">
 
