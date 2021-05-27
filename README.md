@@ -15,7 +15,7 @@ _오성 그룹웨어 프로젝트_
 > Back-end/Server
 
 - Java
-- Spring Framework MVC
+- Spring MVC
 - Jsp
 - Apache Tomcat v8.5
 - OracleDB
