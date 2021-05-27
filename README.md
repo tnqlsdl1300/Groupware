@@ -106,10 +106,9 @@ _오성 그룹웨어 프로젝트_
 - ToDo+ 기존의 페이지 이동 방식에서 모든 처리를 Ajax로 변경
 
   `변경전`
-
-  ![todoAjaxX](https://github.com/tnqlsdl1300/GitHub/blob/9d5b60bf910b8e6924c77d6f768041e743980c14/groupware_src/todoAjaxX.gif)
+  <img src = "https://github.com/tnqlsdl1300/GitHub/blob/9d5b60bf910b8e6924c77d6f768041e743980c14/groupware_src/todoAjaxX.gif" width="500">
 
   `변경후`
 
-  <video src="C:\Users\Subin\Videos\Captures\todoAjaxO.mp4" width="500"></video>
+  <img src = "https://github.com/tnqlsdl1300/GitHub/blob/72fcf1dac77540b03d90df8340abb640b5c6f067/groupware_src/todoAjaxO.gif" width="500">
 
