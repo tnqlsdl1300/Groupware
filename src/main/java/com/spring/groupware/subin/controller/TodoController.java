@@ -32,7 +32,7 @@ public class TodoController {
 		
 		HttpSession session = request.getSession();
 		EmployeeVO loginManager = (EmployeeVO)session.getAttribute("loginemp");
-
+		/*
 		if (loginManager != null) {
 			
 			String fk_emp_no = String.valueOf(loginManager.getEmp_no());
@@ -40,10 +40,41 @@ public class TodoController {
 			
 			mav.addObject("todoList", todoList);
 		}
-
+		*/
 		mav.setViewName("subin/todo/todo.tiles1");
 		
 		return mav;
+	}
+	
+	// 내 보드 불러오기
+	@ResponseBody
+	@RequestMapping(value="/readBoard.os", produces="text/plain;charset=UTF-8")
+	public String readBoard(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		EmployeeVO loginManager = (EmployeeVO)session.getAttribute("loginemp");
+		
+		String fk_emp_no = String.valueOf(loginManager.getEmp_no());
+		
+		List<TodoVO> todoList = service.selectTodoList(fk_emp_no);
+		
+		JSONArray jsonArr = new JSONArray();
+		
+		if (todoList != null) {
+			for (TodoVO todo : todoList) {
+				JSONObject jsonObj = new JSONObject();
+				
+				jsonObj.put("todo_no", todo.getTodo_no());
+				jsonObj.put("fk_emp_no", todo.getFk_emp_no());
+				jsonObj.put("subject", todo.getSubject());
+				jsonObj.put("content", todo.getContent());
+				jsonObj.put("bookmark", todo.getBookmark());
+				System.out.println(todo.getSubject());
+				jsonArr.put(jsonObj);
+			}
+		}
+		
+		return jsonArr.toString();
 	}
 	
 	// 즐겨찾기 불러오기

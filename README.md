@@ -101,3 +101,16 @@ _오성 그룹웨어 프로젝트_
 
 `기능 설명을 위한 자막이 있습니다. 유튜브 자막을 켜주시길 바랍니다.` 
 
+## 수정사항
+
+- ToDo+ 기존의 페이지 이동 방식에서 모든 처리를 Ajax로 변경
+
+  `변경전`
+
+
+  <video src="C:\Users\Subin\Videos\Captures\todoAjaxX.mp4" width="500"></video>
+
+  `변경후`
+
+  <video src="C:\Users\Subin\Videos\Captures\todoAjaxO.mp4" width="500"></video>
+

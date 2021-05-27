@@ -154,16 +154,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-	// todo 별 눌렀을 때 즐겨찾기 구현 
+	
 	
 	//전체 모달 닫기(전역함수인듯)
 	window.closeModal = function(){
-	    $('.modal').modal('hide');
-	    javascript:history.go(0);
+		
+		// 페이지 내의 모든 input, textarea 타입을 초기화 하기 때문에 나중에 다른 input, textarea를 추가할 시 주의해야 함
+		$('input').val('');
+		$('textarea').val('');
+		$('.modal').modal('hide');
 	};
 
 	$(document).ready(function() {
-		
+	
+		readBoard();
 		readBookmark();
 
 		// 할일 수정 모달 연결 함수(해당 todo_no 모달로 전달)
@@ -192,6 +196,52 @@
 		});
 		
 	});
+
+
+	// 내 보드 불러오기
+	function readBoard() {
+
+		$.ajax({
+			url:"<%= request.getContextPath() %>/readBoard.os",
+			type:"GET",
+			dataType:"JSON",
+			success:function(json){
+				var html = "";
+				if(json.length > 0) {
+					$.each(json, function(index, item){
+						
+						html += '<li class="each_todo edit_todo" data-toggle="modal" data-target="#editTodoModal"';
+						html += 'data-seq=' + item.todo_no + ' data-subject=' + item.subject + ' data-content=' + item.content + '>';
+						html += '<div class="each_todo_box">';
+						html += '<span class="todo_text">' + item.subject + '</span>';
+						html += '<span class="star_box" onclick="javascript:event.cancelBubble=true; bookmark(' + item.todo_no + ')">';
+						if(item.bookmark == 1){
+							html += "<i class='fa fa-star star_color_pink'></i>";
+						}else{
+							html += "<i class='fa fa-star'></i>";
+						}
+						html += "</span>";
+						html += "</div>";
+						html += "<div class='content_box'>" + item.content + "</div>";
+						html += "</li>";
+					});
+				}
+				else {
+					html += "";
+				}
+				html += '<li class="each_todo add_each_todo" data-toggle="modal" data-target="#addTodoModal">';
+				html += '<div class="add_todo_box" style="display: table-cell; vertical-align: middle;">';
+				html += '<i class="fa fa-plus" style="color: gray; font-size: 25px;"></i>';
+				html += '</li>';
+				
+				$("ul.myBoardUl").html(html);
+			},
+			error: function(request, status, error){
+				alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+		 	}
+		});
+
+	}
 	
 	// 즐겨찾기 버튼을 클릭했을 시(DB변경)
 	function bookmark(todo_no) {
@@ -208,7 +258,8 @@
 					alert("DB오류");
 				}
 				else {
-					javascript:history.go(0);
+					readBookmark();
+					readBoard();
 				}
 			},
 			error: function(request, status, error){
@@ -285,7 +336,9 @@
 					alert("DB오류");
 				}
 				else {
-					javascript:history.go(0);
+					readBoard();
+					readBookmark();
+					cancelBtn();
 				}
 			},
 			error: function(request, status, error){
@@ -328,7 +381,9 @@
 					alert("DB오류");
 				}
 				else {
-					javascript:history.go(0);
+					readBoard();
+					readBookmark();
+					cancelBtn();
 				}
 			},
 			error: function(request, status, error){
@@ -353,7 +408,9 @@
 					alert("DB오류");
 				}
 				else {
-					javascript:history.go(0);
+					readBoard();
+					readBookmark();
+					cancelBtn();
 				}
 			},
 			error: function(request, status, error){
@@ -364,6 +421,7 @@
 	
 	// 모달창 취소 버튼
 	function cancelBtn() {
+		
 		window.closeModal();
 	}
 	
@@ -390,8 +448,8 @@
 		
 		<div id="board" style="clear: both;">
 			<h5 class="titleText secondTitle">내 보드</h5>
-			<ul style="padding:0; margin: 0;">
-				<c:if test="${ not empty todoList }">
+			<ul class="myBoardUl" style="padding:0; margin: 0;">
+				<!--<c:if test="${ not empty todoList }">
 					<c:forEach var="todovo" items="${todoList}">
 						<li class="each_todo edit_todo" data-toggle="modal" data-target="#editTodoModal"
 						data-seq="${ todovo.todo_no }" data-subject="${ todovo.subject }" data-content="${ todovo.content }">
@@ -409,13 +467,13 @@
 							<div class="content_box">${ todovo.content }</div>
 						</li>
 					</c:forEach>
-				</c:if>
+				</c:if> !-->
 				<%-- 할일 추가 --%>
-				<li class="each_todo add_each_todo" data-toggle="modal" data-target="#addTodoModal">
+				<!-- <li class="each_todo add_each_todo" data-toggle="modal" data-target="#addTodoModal">
 					<div class="add_todo_box" style="display: table-cell; vertical-align: middle;">
 						<i class="fa fa-plus" style="color: gray; font-size: 25px;"></i>
 					</div>
-				</li>
+				</li> -->
 
 			</ul>
 		</div>
