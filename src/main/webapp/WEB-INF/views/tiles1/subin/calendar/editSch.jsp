@@ -781,8 +781,9 @@
 	}
 	
 	// 삭제할 일정이 초대받은 일정인지 검사
-	function checkDelInviteSch() {
+	function checkInviteSch(type) {
 		
+		// type 1 삭제, 2 수정
 		$.ajax({
 			url:"/groupware/checkDelInviteSch.os",
 			data:{fk_schedule_no:${schvo.schedule_no}, fk_calendar_no:${schvo.fk_calendar_no}},
@@ -791,9 +792,19 @@
 			success:function(json){
 
 				if (json.n == 0) {
-					alert("초대받은 일정은 삭제할 수 없습니다.");
+					if (type == 1) {
+						alert("초대받은 일정은 삭제할 수 없습니다.");
+					}else{
+						alert("초대받은 일정은 수정할 수 없습니다.");
+					}
+					
 				}else{
-					delSchBtn();
+					if (type == 1) {
+						delSchBtn();
+					}else{
+						editSchBtn();
+					}
+					
 					location.href = "<%= request.getContextPath() %>/goCalendar.os";
 				}
 				
@@ -983,8 +994,8 @@
 	    </table>
 		
 		<div style="float: right;">
-			<button class="btn redBtn" type="button" onclick="checkDelInviteSch()">일정 삭제</button>
-			<button class="btn blueBtn" type="button" onclick="editSchBtn()">수정</button>
+			<button class="btn redBtn" type="button" onclick="checkInviteSch(1)">일정 삭제</button>
+			<button class="btn blueBtn" type="button" onclick="checkInviteSch(2)">수정</button>
 		</div>
 		<br style="clear: both;">
 	   </form>
@@ -999,7 +1010,6 @@
 <div id="findEmpListModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
  <div class="modal-dialog" style="width: 1070px;">
  
-   <!-- Modal content-->
    <div class="modal-content">
      <div class="modal-header" style="height: 60px;">
        <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()"><span style="font-size: 26pt;">&times;</span></button>
@@ -1015,17 +1025,7 @@
                <div class="content_layout_address" style="margin-left : 60px;">
                   <div id="tabArea" style="margin-left : -40px;">
                      <ul class="tab_nav nav_layer" style="margin-bottom: 22px;">
-                        <%--
-                        <li value="user">
-                           <a>개인 주소록</a>
-                        </li>
-                        <li value="company">
-                           <a>공용 주소록</a>
-                        </li>
-                        <li value="org">
-                           <a>조직도</a>
-                        </li>
-                         --%>
+                        
                      </ul>
                   </div>
                   
@@ -1042,17 +1042,7 @@
                                              <li class="orgName" style="width:120px;" value="1">전략기획팀</li>
                                              
                                              <li class="orgName" style="width:120px;" value="2">경영지원팀
-                                                 <%-- 
-                                                 <ul>
-                                                     <li style="width:120px;">Reports
-                                                         <ul>
-                                                             <li>Report1</li>
-                                                             <li>Report2</li>
-                                                             <li>Report3</li>
-                                                         </ul>
-                                                     </li>
-                                                 </ul>
-                                                 --%>
+                                                 
                                              </li>
                                              <li class="orgName" value="3">인사팀</li>
                                              <li class="orgName" value="4">회계팀</li>
@@ -1125,13 +1115,7 @@
                      <div>
                         <div class="move_wrap">
                            <ul class="addListGroup" style="padding-left: 10px;">
-                              <%-- 
-                              <li class="addList">
-                                 <span class="btn_bg addGroup" style="display: inline-block; margin-bottom: 10px; width: 50px; font-size: 10pt;">
-                                    그룹
-                                 </span>
-                              </li>
-                              --%>
+                              
                               <li class="addList">
                                  <span class="btn_bg addUser" style="display: inline-block; width: 50px; font-size: 10pt; ">
                                     사용자

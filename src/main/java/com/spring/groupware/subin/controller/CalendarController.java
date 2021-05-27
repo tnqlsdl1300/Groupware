@@ -100,9 +100,7 @@ public class CalendarController {
 	         }
 	         
 	      }
-	      
-	      // System.out.println("jsonArr.toString() ========>" + jsonArr.toString());
-	      
+
 	      return jsonArr.toString();
 	   }
 
@@ -261,7 +259,6 @@ public class CalendarController {
 	@RequestMapping(value="/editCalColor.os", method= {RequestMethod.GET}, produces="text/plain;charset=UTF-8")
 	public String editCalColor(HttpServletRequest request) {
 		
-		// 변경
 		HttpSession session = request.getSession();
 		EmployeeVO loginManager = (EmployeeVO)session.getAttribute("loginemp");
 		
@@ -572,57 +569,14 @@ public class CalendarController {
 				e.printStackTrace();
 			}
 		}
-		
-		/*
-		// 삭제할 참가자 groupid 받아오기
-		List<String> groupidList = service.findDelGroupid(schedule_no);
-		String delGroupid = groupidList.get(0);
-		paraMap.put("delGroupid", delGroupid);
-		
-		// 기존 참가자 데이터 전부 삭제
-		int n = service.delGroupid(paraMap);
-		
-		// 같은 일정일 시 묶어줄 groupid를 받음
-		String groupId = service.selectGroupId(); 
-		paraMap.put("groupId", groupId);
-		
-		// 참가자 데이터 추가
-		int n1 = 0;
-		int cnt = 0;
-		for (String emp_no : fk_emp_noArr) {
-			
-			paraMap.put("fk_emp_no", emp_no);
-			try {
-				n1 = service.updateAtd(paraMap);
-				
-				if (n1 == 1) cnt++;
-			} catch (Throwable e) {
-				e.printStackTrace();
-			}
-		}
 
-		
-		// 기존 일정 전부 수정
-		
-		
-		
-		JSONArray jsonArr = new JSONArray();
-		
-		for (EmployeeVO empvo : empList) {
-			JSONObject jsonObj = new JSONObject();
-			jsonObj.put("fk_emp_no", empvo.getEmp_no());
-			jsonObj.put("emp_name", empvo.getEmp_name());
-			
-			jsonArr.put(jsonObj);
-		}*/
-		
 		JSONObject jsonObj = new JSONObject();
 		jsonObj.put("n", cnt);
 		
 		return jsonObj.toString();
 	}
 	
-	// 삭제할 일정이 초대받은 일정인지 검사
+	// 일정이 초대받은 일정인지 검사
 	@ResponseBody
 	@RequestMapping(value="/checkDelInviteSch.os", method= {RequestMethod.POST}, produces="text/plain;charset=UTF-8")
 	public String checkDelInviteSch(HttpServletRequest request) {
@@ -640,8 +594,6 @@ public class CalendarController {
 		
 		// 로그인한 사원의 내 캘린더 번호를 배열로 받아옴
 		List<CalendarVO> calList = service.readCalList(fk_emp_no);
-		
-		// 받아온 글번호의 
 		
 		int n = 0;
 		if (calList != null) {

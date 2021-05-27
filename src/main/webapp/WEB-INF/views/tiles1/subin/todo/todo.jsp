@@ -155,8 +155,6 @@
 
 <script type="text/javascript">
 	
-	
-	//전체 모달 닫기(전역함수인듯)
 	window.closeModal = function(){
 		
 		// 페이지 내의 모든 input, textarea 타입을 초기화 하기 때문에 나중에 다른 input, textarea를 추가할 시 주의해야 함
@@ -269,7 +267,7 @@
 
 	}
 	
-	// 즐겨찾기 할일 불러오기(로그인시 수정!!)
+	// 즐겨찾기 할일 불러오기
 	function readBookmark() {
 		
 		$.ajax({
@@ -449,32 +447,7 @@
 		<div id="board" style="clear: both;">
 			<h5 class="titleText secondTitle">내 보드</h5>
 			<ul class="myBoardUl" style="padding:0; margin: 0;">
-				<!--<c:if test="${ not empty todoList }">
-					<c:forEach var="todovo" items="${todoList}">
-						<li class="each_todo edit_todo" data-toggle="modal" data-target="#editTodoModal"
-						data-seq="${ todovo.todo_no }" data-subject="${ todovo.subject }" data-content="${ todovo.content }">
-							<div class="each_todo_box">
-								<span class="todo_text">${ todovo.subject }</span>
-								<span class="star_box" onclick="javascript:event.cancelBubble=true; bookmark('${ todovo.todo_no }')">
-									<c:if test="${ todovo.bookmark == 1 }">
-										<i class="fa fa-star star_color_pink"></i> 
-									</c:if>
-									<c:if test="${ todovo.bookmark == 0 }">
-										<i class="fa fa-star"></i> 
-									</c:if>
-								</span>
-							</div>
-							<div class="content_box">${ todovo.content }</div>
-						</li>
-					</c:forEach>
-				</c:if> !-->
-				<%-- 할일 추가 --%>
-				<!-- <li class="each_todo add_each_todo" data-toggle="modal" data-target="#addTodoModal">
-					<div class="add_todo_box" style="display: table-cell; vertical-align: middle;">
-						<i class="fa fa-plus" style="color: gray; font-size: 25px;"></i>
-					</div>
-				</li> -->
-
+				
 			</ul>
 		</div>
 		
@@ -489,7 +462,6 @@
 	<%-- 할일 수정 모달 --%>
 	<div id="editTodoModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
 	 <div class="modal-dialog">
-	   <!-- Modal content-->
 	   <div class="modal-content">
 	     <div class="modal-header">
 	       <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()">&times;</button>
@@ -524,7 +496,6 @@
 	<%-- 할일 추가 모달 --%>
 	<div id="addTodoModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
 	 <div class="modal-dialog">
-	   <!-- Modal content-->
 	   <div class="modal-content">
 	     <div class="modal-header">
 	       <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()">&times;</button>

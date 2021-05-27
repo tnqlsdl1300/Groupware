@@ -30,17 +30,6 @@ public class TodoController {
 	@RequestMapping(value = "/goTodo.os")
 	public ModelAndView requiredLogin_goTodo(HttpServletRequest request, HttpServletResponse response, ModelAndView mav) {
 		
-		HttpSession session = request.getSession();
-		EmployeeVO loginManager = (EmployeeVO)session.getAttribute("loginemp");
-		/*
-		if (loginManager != null) {
-			
-			String fk_emp_no = String.valueOf(loginManager.getEmp_no());
-			List<TodoVO> todoList = service.selectTodoList(fk_emp_no);
-			
-			mav.addObject("todoList", todoList);
-		}
-		*/
 		mav.setViewName("subin/todo/todo.tiles1");
 		
 		return mav;

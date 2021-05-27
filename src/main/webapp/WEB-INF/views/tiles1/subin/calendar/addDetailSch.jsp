@@ -844,17 +844,6 @@
                <div class="content_layout_address" style="margin-left : 60px;">
                   <div id="tabArea" style="margin-left : -40px;">
                      <ul class="tab_nav nav_layer" style="margin-bottom: 22px;">
-                        <%--
-                        <li value="user">
-                           <a>개인 주소록</a>
-                        </li>
-                        <li value="company">
-                           <a>공용 주소록</a>
-                        </li>
-                        <li value="org">
-                           <a>조직도</a>
-                        </li>
-                         --%>
                      </ul>
                   </div>
                   
@@ -871,17 +860,7 @@
                                              <li class="orgName" style="width:120px;" value="1">전략기획팀</li>
                                              
                                              <li class="orgName" style="width:120px;" value="2">경영지원팀
-                                                 <%-- 
-                                                 <ul>
-                                                     <li style="width:120px;">Reports
-                                                         <ul>
-                                                             <li>Report1</li>
-                                                             <li>Report2</li>
-                                                             <li>Report3</li>
-                                                         </ul>
-                                                     </li>
-                                                 </ul>
-                                                 --%>
+                                                 
                                              </li>
                                              <li class="orgName" value="3">인사팀</li>
                                              <li class="orgName" value="4">회계팀</li>
@@ -954,13 +933,7 @@
                      <div>
                         <div class="move_wrap">
                            <ul class="addListGroup" style="padding-left: 10px;">
-                              <%-- 
-                              <li class="addList">
-                                 <span class="btn_bg addGroup" style="display: inline-block; margin-bottom: 10px; width: 50px; font-size: 10pt;">
-                                    그룹
-                                 </span>
-                              </li>
-                              --%>
+                              
                               <li class="addList">
                                  <span class="btn_bg addUser" style="display: inline-block; width: 50px; font-size: 10pt; ">
                                     사용자

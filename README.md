@@ -101,11 +101,18 @@ _오성 그룹웨어 프로젝트_
 
 `기능 설명을 위한 자막이 있습니다. 유튜브 자막을 켜주시길 바랍니다.` 
 
-## 수정사항
+## 변경사항
 
-- ToDo+ 기존의 페이지 이동 방식에서 모든 처리를 Ajax로 변경
+> 기능 추가
+
+- ToDo+: 기존의 페이지 이동 방식에서 모든 처리를 Ajax로 변경
 
   `변경전/후`
   
   <img src = "https://github.com/tnqlsdl1300/GitHub/blob/9d5b60bf910b8e6924c77d6f768041e743980c14/groupware_src/todoAjaxX.gif" width="50%"><img src = "https://github.com/tnqlsdl1300/GitHub/blob/72fcf1dac77540b03d90df8340abb640b5c6f067/groupware_src/todoAjaxO.gif" width="50%">
 
+> 오류 수정
+
+- [초대받은 일정 캘린더] 참석자가 일정을 수정 시 수정되는 오류 수정
+
+- [일정 캘린더] 계정을 변경하고 일정 캘린더에 접근했을 때 잘못된 일정이 보이는 오류 수정

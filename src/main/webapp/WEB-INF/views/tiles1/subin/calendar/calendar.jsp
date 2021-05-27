@@ -110,7 +110,7 @@
 	  background: #eee;
 	  margin: 0;
 	}
-	.demo-topbar + #external-events { /* will get stripped out */
+	.demo-topbar + #external-events {
 	  top: 60px;
 	}
 
@@ -214,13 +214,11 @@ var calendar;
 //전체 모달 닫기(전역함수인듯)
 window.closeModal = function(){
     $('.modal').modal('hide');
-    //javascript:history.go(0);
 };
 
 $(document).ready(function() {
 	
 	readCalList();
-	//checkDate();
 	
 	// 내 캘린더의 체크박스를 조작했을 때 를 실행
 	$(document).on('input.calCheckbox', function() {
@@ -318,9 +316,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	                            id: item.schedule_no
 	                         });
 						}else{
-							// 검색된 결과가 없을 때
+							// 검색된 결과가 없을 때	
 						}
-						
 						
 					});
 
@@ -719,7 +716,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <%-- 일정 등록 모달 --%>
 	<div id="addSchModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
 	 <div class="modal-dialog">
-	   <!-- Modal content-->
 	   <div class="modal-content">
 	     <div class="modal-header">
 	       <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()">&times;</button>

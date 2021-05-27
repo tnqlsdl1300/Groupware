@@ -421,7 +421,6 @@
 	<%-- 캘린더명 변경 모달 --%>
 	<div id="editCalNameModal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
 	 <div class="modal-dialog">
-	   <!-- Modal content-->
 	   <div class="modal-content">
 	     <div class="modal-header">
 	       <button type="button" class="close" data-dismiss="modal" onclick="window.closeModal()">&times;</button>

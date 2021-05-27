@@ -108,6 +108,12 @@ body.go_skin_home_w.go_skin_advanced .go_footer {
       $(".go_footer").css("display","none");
       $("aside.go_organogram").css("display","none");
    }
+   
+   // 로그아웃 시 checkCal(체크된 캘린더)를 로컬스토리지에서 삭제
+   function delLS() {
+	   var checkCal = localStorage.getItem("checkCal");
+	   localStorage.removeItem("checkCal");
+   }
 
 </script>   
 <%-- 지은 추가한 부분 끝--%>
@@ -144,7 +150,7 @@ body.go_skin_home_w.go_skin_advanced .go_footer {
                         </a>
                         <ul class="dropdown-menu">
                      <li><a href="<%= ctxPath%>/profile.os">기본정보</a></li>
-                     <li><a href="<%= ctxPath%>/logout.os">로그아웃</a></li>
+                     <li onclick="delLS()"><a href="<%= ctxPath%>/logout.os">로그아웃</a></li>
                   </ul>
                     </li>
                 </ul>
