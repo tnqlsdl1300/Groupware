@@ -242,16 +242,13 @@ public class ReservationController {
 		if (overlap != 0) {
 			// 사용자가 선택한 시간대에 이미 예약이 있을 경우
 			jsonObj.put("n", -1);
-			
-			return jsonObj.toString();
-			
 		}else {
 			// 예약이 가능한 경우 예약테이블에 데이터 insert 진행
 			int n = service.addModalRsv(paraMap);
-			jsonObj.put("n", n);
-			
-			return jsonObj.toString();
+			jsonObj.put("n", n);	
 		}
+		
+		return jsonObj.toString();
 		
 
 		
