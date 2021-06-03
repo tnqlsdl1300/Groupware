@@ -117,6 +117,6 @@ _오성 그룹웨어 프로젝트_
 
 - [일정 캘린더] 계정을 변경하고 일정 캘린더에 접근했을 때 잘못된 일정이 보이는 오류 수정
 
----
-### Todo List
-- [ ] CalendarController -> addDetailSch() 메서드 리팩토링
+## Refactoring List
+- [ ] CalendarController -> addDetailSch() 메서드
+- [ ] CalendarController -> doEditSch() 메서드
