@@ -401,15 +401,19 @@ public class CalendarController {
 		// 같은 일정일 시 묶어줄 groupid를 받음
 		String groupId = service.selectGroupId();
 		paraMap.put("groupId", groupId);
+		
+		// DB 작업의 성공 여부 확인을 위한 변수
+		int n = 0;
 
 		try {
 			service.addDetailSch(paraMap);
+			n = 1;
 		} catch (Throwable e) {
-			e.printStackTrace();
+			n = 0;
 		}
 		
 		JSONObject jsonObj = new JSONObject();
-		jsonObj.put("n", 1);
+		jsonObj.put("n", n);
 		
 		return jsonObj.toString();
 	}
@@ -521,9 +525,9 @@ public class CalendarController {
 		paraMap.put("endday", endday);
 		paraMap.put("fk_calendar_no", fk_calendar_no);
 		paraMap.put("content", content);
+		paraMap.put("fk_emp_noArr", fk_emp_noArr);
+		paraMap.put("checkDel", "del");
 
-
-		
 		// 삭제할 일정번호 문자열로 받아오기
 		List<String> delSchNoList = service.findDelSchNo(paraMap);
 		
@@ -533,30 +537,22 @@ public class CalendarController {
 		}
 		paraMap.put("fk_schArr", fk_schArr);
 		
-		// 해당하는 일정 삭제(참가자도 자동으로 삭제됨)
-		service.delSch(paraMap);
-		
 		// 수정할 내용으로 새로운 일정들 생성
 		String groupId = service.selectGroupId();
 		paraMap.put("groupId", groupId);
 		
+		// DB 작업의 성공 여부 확인을 위한 변수
 		int n = 0;
-		int cnt = 0;	// for문을 사용했기 때문에 n값을 제대로 측정할 수 없으므로 cnt 라는 변수 선언
-		
-		for (String emp_no : fk_emp_noArr) {
-			
-			paraMap.put("fk_emp_no", emp_no);
-			try {
-				n = service.addDetailSch(paraMap);
-				
-				if (n == 1) cnt++;
-			} catch (Throwable e) {
-				e.printStackTrace();
-			}
+
+		try {
+			service.addDetailSch(paraMap);
+			n = 1;
+		} catch (Throwable e) {
+			n = 0;
 		}
 
 		JSONObject jsonObj = new JSONObject();
-		jsonObj.put("n", cnt);
+		jsonObj.put("n", n);
 		
 		return jsonObj.toString();
 	}

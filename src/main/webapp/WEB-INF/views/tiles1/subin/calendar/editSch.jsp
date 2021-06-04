@@ -724,7 +724,7 @@
 				if (json.n == 1) {
 					location.href = "<%= request.getContextPath() %>/goCalendar.os";
 					
-				}else{
+				}else if(json.n == 0){
 					alert("DB 오류");
 				}
 				
@@ -898,8 +898,13 @@
 			type:"POST",
 			dataType:"JSON",
 			success:function(json){
-
-				location.href = "<%= request.getContextPath() %>/goCalendar.os";
+				
+				if(json.n == 1){
+					location.href = "<%= request.getContextPath() %>/goCalendar.os";
+				}else if(json.n == 0){
+					alert("DB오류");
+				}
+				
 				
 			},
 			error: function(request, status, error){

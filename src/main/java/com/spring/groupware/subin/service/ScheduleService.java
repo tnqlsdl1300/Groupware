@@ -116,10 +116,15 @@ public class ScheduleService implements InterScheduleService {
 		return n;
 	}
 	
-	// 일정 상세 추가하기(다수의 참가자)
+	// 일정 상세 추가 및 수정하기(다수의 참가자)
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, isolation=Isolation.READ_COMMITTED, rollbackFor= {Throwable.class})
 	public int addDetailSch(Map<String, Object> paraMap) throws Throwable {
+		
+		// doEditSch() 메서드에서 호출했을 시 수정을 위한 삭제도 함께 하기 위해 체크
+		if ("del".equals(paraMap.get("checkDel"))) {
+			dao.delSch(paraMap);
+		}
 		
 		// 참석자 fk_emp_no를 담은 배열
 		String[] fk_emp_noArr = (String[])paraMap.get("fk_emp_noArr");

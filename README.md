@@ -120,4 +120,6 @@ _오성 그룹웨어 프로젝트_
 ## Refactoring List
 - [x] CalendarController -> addDetailSch() 메서드
   - 기존의 채번으로 인한 복잡한 비지니스 로직을 Mybatis의 selectKey를 이용해 코드 간소화
-- [ ] CalendarController -> doEditSch() 메서드
+- [x] CalendarController -> doEditSch() 메서드
+  - 기존의 채번으로 인한 복잡한 비지니스 로직을 Mybatis의 selectKey를 이용해 코드 간소화
+  - 원활한 트랜잭션 처리를 위해 addDetailSch()[Service - 기존의 일정추가 기능] 메서드에 경우에 따른 수정을 위한 삭제 메서드 추가
