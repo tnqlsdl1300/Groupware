@@ -121,21 +121,22 @@ public class ScheduleService implements InterScheduleService {
 	@Transactional(propagation=Propagation.REQUIRED, isolation=Isolation.READ_COMMITTED, rollbackFor= {Throwable.class})
 	public int addDetailSch(Map<String, Object> paraMap) throws Throwable {
 		
-		String seq = dao.fk_schedule_no();
+		// 참석자 fk_emp_no를 담은 배열
+		String[] fk_emp_noArr = (String[])paraMap.get("fk_emp_noArr");
 		
-		paraMap.put("seq", seq);
-		
-		int n = 0;
-		
-		// 일정 추가(다수)
-		int n1 = dao.addDetailSch(paraMap);	
-		
-		// 일정 참석자 추가(다수)
-		int n2 = dao.insertMultiAtt(paraMap);
-		
-		if(n1 == 1 && n2 == 1) n = 1;
-		
-		return n;
+		// 모든 참석자의 [일정]과 [참석자] 테이블에 insert
+		for (String emp_no : fk_emp_noArr) {
+			paraMap.put("fk_emp_no", emp_no);
+			
+			// 일정 추가(다수)
+			// mybatis에서 일정을 추가하며 해당 schedule_no_seq를 받아서 paraMap에 넣어줌
+			dao.addDetailSch(paraMap);
+			
+			// 일정 참석자 추가(다수)
+			dao.insertMultiAtt(paraMap);
+		}
+
+		return 1;
 	}
 	
 	// 같은 일정일 시 묶어줄 groupid를 받음

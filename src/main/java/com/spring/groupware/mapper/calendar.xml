@@ -102,14 +102,19 @@
 	
 	<!-- 일정 상세 추가하기(다수) -->
 	<insert id="addDetailSch" parameterType="HashMap">
+		<!-- 일정 seq를 채번해서 받아온 뒤 일정을 insert 할때 schedule_no컬럼에 넣어줌 -->
+		<!-- 채번한 selectKey의 schedule_no_seq는 파라미터로 받은 HashMap에 해당명의 key로 넣어줌 -->
+		<selectKey keyProperty="schedule_no_seq" resultType="int" order="BEFORE">
+	    	select schedule_no_seq.nextval from dual
+	    </selectKey>
 		insert into tbl_schedule(schedule_no, fk_emp_no, fk_calendar_no, title, startday, endday, content)
-		values(#{seq}, #{fk_emp_no}, #{fk_calendar_no}, #{title}, to_date(#{startday},'yyyy-mm-dd hh24:mi:ss'), to_date(#{endday},'yyyy-mm-dd hh24:mi:ss'), #{content})		
+		values(#{schedule_no_seq}, #{fk_emp_no}, #{fk_calendar_no}, #{title}, to_date(#{startday},'yyyy-mm-dd hh24:mi:ss'), to_date(#{endday},'yyyy-mm-dd hh24:mi:ss'), #{content})		
 	</insert>
 	
 	<!-- 일정 상세 추가하기 => 일정 참석자 추가(다수의 참가자) -->
 	<insert id="insertMultiAtt" parameterType="HashMap">
 		insert into tbl_schedule_attendee(fk_schedule_no, fk_emp_no, groupid)
-		values(#{seq}, #{fk_emp_no}, #{groupId})
+		values(#{schedule_no_seq}, #{fk_emp_no}, #{groupId})
 	</insert>
 	
 	<select id="selectGroupId" resultType="String">

@@ -396,33 +396,20 @@ public class CalendarController {
 		paraMap.put("endday", endday);
 		paraMap.put("fk_calendar_no", fk_calendar_no);
 		paraMap.put("content", content);
+		paraMap.put("fk_emp_noArr", fk_emp_noArr);
 		
 		// 같은 일정일 시 묶어줄 groupid를 받음
 		String groupId = service.selectGroupId();
 		paraMap.put("groupId", groupId);
-		
-		int n = 0;
-		int cnt = 0;	// for문을 사용했기 때문에 n값을 제대로 측정할 수 없으므로 cnt 라는 변수 선언
-		
-		for (String emp_no : fk_emp_noArr) {
-			
-			paraMap.put("fk_emp_no", emp_no);
-			try {
-				n = service.addDetailSch(paraMap);
-				
-				if (n == 1) cnt++;
-			} catch (Throwable e) {
-				e.printStackTrace();
-			}
-		}
-		
-		// 모든 것들이 insert 됐을 때
-		if (fk_emp_noArr.length == cnt) {
-			n = 1;
+
+		try {
+			service.addDetailSch(paraMap);
+		} catch (Throwable e) {
+			e.printStackTrace();
 		}
 		
 		JSONObject jsonObj = new JSONObject();
-		jsonObj.put("n", n);
+		jsonObj.put("n", 1);
 		
 		return jsonObj.toString();
 	}

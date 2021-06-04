@@ -1,5 +1,7 @@
 select * from tbl_my_calendar;
 select * from tbl_schedule;
+select * from tbl_schedule
+where fk_calendar_no = 117;
 select * from tbl_todo;
 select * from tbl_employee;
 select * from tbl_schedule_attendee;

@@ -118,5 +118,6 @@ _오성 그룹웨어 프로젝트_
 - [일정 캘린더] 계정을 변경하고 일정 캘린더에 접근했을 때 잘못된 일정이 보이는 오류 수정
 
 ## Refactoring List
-- [ ] CalendarController -> addDetailSch() 메서드
+- [x] CalendarController -> addDetailSch() 메서드
+  - 기존의 채번으로 인한 복잡한 비지니스 로직을 Mybatis의 selectKey를 이용해 코드 간소화
 - [ ] CalendarController -> doEditSch() 메서드
