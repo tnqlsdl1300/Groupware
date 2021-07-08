@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.spring.groupware.subin.model.TodoVO;
 import com.spring.groupware.subin.service.InterTodoService;
 import com.spring.groupware.yongjin.model.EmployeeVO;
@@ -46,24 +47,11 @@ public class TodoController {
 		String fk_emp_no = String.valueOf(loginManager.getEmp_no());
 		
 		List<TodoVO> todoList = service.selectTodoList(fk_emp_no);
-		
-		JSONArray jsonArr = new JSONArray();
-		
-		if (todoList != null) {
-			for (TodoVO todo : todoList) {
-				JSONObject jsonObj = new JSONObject();
-				
-				jsonObj.put("todo_no", todo.getTodo_no());
-				jsonObj.put("fk_emp_no", todo.getFk_emp_no());
-				jsonObj.put("subject", todo.getSubject());
-				jsonObj.put("content", todo.getContent());
-				jsonObj.put("bookmark", todo.getBookmark());
 
-				jsonArr.put(jsonObj);
-			}
-		}
+		Gson gson = new Gson();
+		String str = gson.toJson(todoList);
 		
-		return jsonArr.toString();
+		return str;
 	}
 	
 	// 즐겨찾기 불러오기
